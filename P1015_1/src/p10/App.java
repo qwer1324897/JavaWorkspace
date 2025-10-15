@@ -1,7 +1,8 @@
-package p3;
+package p10;
 
-public class p1 {
+public class App {
     public static void main(String[] args) {
         
     }
 }
+
