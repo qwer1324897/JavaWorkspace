@@ -17,7 +17,7 @@ class BankAccount {     // 계좌 정보와 입,출금 로직 클래스
             return;
         }
         this.balance += money;
-        System.out.println(money + "원이 입금되었습니다. 현재 잔액: " + this.balance + "원");
+        System.out.println("\n" + money + "원이 입금되었습니다. 현재 잔액: " + this.balance + "원");
     }
     public void withdrawal(int money) {   // 출금 메서드
         if (money <= 0) {
@@ -25,14 +25,14 @@ class BankAccount {     // 계좌 정보와 입,출금 로직 클래스
             return;
         }
         if (this.balance < money) {
-            System.out.println("잔액이 부족합니다. 현재 잔액: " + this.balance + "원");
+            System.out.println(" *잔액이 부족합니다.* \n출금에 실패하였습니다. 현재 잔액: " + this.balance + "원");
         } else {
             this.balance -= money;
-            System.out.println(money + "원이 출금되었습니다. 현재 잔액: " + this.balance + "원");
+            System.out.println("\n" + money + "원이 출금되었습니다. 현재 잔액: " + this.balance + "원");
         }
     }
     public void printAccount() {    // 계좌 이름, 잔액 확인 메서드
-        System.out.println("=========== 계좌 정보 ===========");
+        System.out.println("========== 계좌 정보 ==========");
         System.out.println("계좌주: " + this.owner + "  잔액: " + this.balance + "원");
     }
     public int getBalance() {   // 잔액 반환 메서드. 잔액은 접근제한자로서, 이 메서드를 통해야만 접근 가능.
@@ -52,11 +52,11 @@ class ScannerHandler {     // 스캐너로 값들을 입력받는 클래스
     public String getStringInput(String text) {   // 계좌명 입력받는 메서드  !! 이거 여기서 text가 무슨역할인지 정확히 이해. !!
         
         while(true) {
-            System.out.println(text);
+            System.out.print(text);
             String scannerOwnerName = scanner.nextLine();
 
             if (scannerOwnerName == null || scannerOwnerName.isEmpty()) {
-                System.out.println("'오류' : 계좌명은 비워둘 수 없습니다. 다시 입력해주세요.");
+                System.out.println("\n*계좌명은 비워둘 수 없습니다.*\n");
                 continue; 
             }
             return scannerOwnerName;
@@ -65,14 +65,14 @@ class ScannerHandler {     // 스캐너로 값들을 입력받는 클래스
 
     public int getIntInput(String text) {   // 정수 입력받는 메서드  !! 마찬가지. 이 text가 무슨 의미인지 이해하고 넘어갈 것. !!
         while(true) {
-            System.out.println(text);
+            System.out.print(text);
 
             if (scanner.hasNextInt()) {
                 int rightInt = scanner.nextInt();
                 scanner.nextLine();
                 return rightInt;
             } else {
-                System.out.println("'오류' : 유효한 숫자를 입력해주세요.");
+                System.out.println("\n*유효한 숫자를 입력하세요.*\n");
                 scanner.nextLine(); // 이 부분 이해가 안 된다. 엔터를 버려야 한다? 원래 이런거 없이도 잘 됐는데. 이 부분 빼놓고 실행시켜보자. 안 되려나?
             }
         }
@@ -82,7 +82,6 @@ class ScannerHandler {     // 스캐너로 값들을 입력받는 클래스
         scanner.close();
     }
 }
-
 
 class MenuHandler {     // 초기화면(메인메뉴) 무한루프 클래스(사실상 인터페이스)
 
@@ -96,12 +95,12 @@ class MenuHandler {     // 초기화면(메인메뉴) 무한루프 클래스(사
 
     public void runMenu() {     // 처음 초기화면으로 쓰일 무한루프 메서드
         while (true) {
-            System.out.println("\n====== Bank Menu ======\n\n");
+            System.out.println("\n====== Bank Menu ======\n");
             System.out.println("1. 입금");
             System.out.println("2. 출금");
             System.out.println("3. 잔액 확인");
             System.out.println("0. 종료");
-            System.out.println("=====================\n");
+            System.out.println("\n========================\n");
 
             int choice = input.getIntInput("원하는 메뉴의 번호를 입력하세요: ");
             // 이 부분에서 전율이 돋았다. 위의 text가 도저히 이해가 안 갔는데, 이 줄과 이 다음줄에서 완벽하고 아름답게 연결된다. 이게 클래스구나.
@@ -132,7 +131,6 @@ class MenuHandler {     // 초기화면(메인메뉴) 무한루프 클래스(사
         }
     }
 }
-
 
     // main에서는 맨 처음 객체 생성하고, 호출로 실행만 함.(main 최소화 > 가독성 극대화)
 

@@ -130,7 +130,7 @@ public class casino {
 
                 int result = (int)(Math.random()*3) + 1;
 
-                String cpuRockScissorsPaper = result == 1 ? 
+                //String cpuRockScissorsPaper = result == 1 ;
 
                 if (rockScissorsPaper.equals("1")) {
 
