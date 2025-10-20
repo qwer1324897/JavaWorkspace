@@ -38,10 +38,9 @@ abstract class Unit {   // 이 유닛 클래스는 말 그래도 상속을 위�
     abstract void attack();
 
     final void stop() {
-        System.out.println("유닉의 로직으로 정지합니다.");
+        System.out.println("유닛의 로직으로 정지합니다.");
     }   // stop()같은 경우는 abstract가 안 붙었기 때문에 오버라이딩이 강제되진 않는다. + final을 붙여서 마지막임을 표시하기도 한다.
 }
-
 
 class Tank extends Unit {
     Tank() {
