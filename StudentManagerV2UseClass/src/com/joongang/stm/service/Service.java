@@ -61,7 +61,7 @@ public class Service {
         IoManager.print("============================");        
     }
 
-    public void startistize() {
+    public void statistize() {
         IoManager.print("\n======= 학생 정보 통계 =======\n");
         StudentDto[] list = repository.findAll();
         int sumScore = 0;

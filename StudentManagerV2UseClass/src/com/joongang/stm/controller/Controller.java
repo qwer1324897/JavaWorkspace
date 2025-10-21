@@ -8,7 +8,7 @@ import com.joongang.stm.service.Service;
 
 public class Controller {
 
-    private Service service = new Service(); 
+    private Service service = new Service();   // 컨트롤러는 서비스를 포함하고 있다.
 
     public void run() {
         welcome();
@@ -71,7 +71,7 @@ public class Controller {
         } else if(command.equals("5")){
 
         } else if(command.equals("6")){
-            service.startistize();
+            service.statistize();
         } else {
             IoManager.print("\n유효하지 않은 값 입니다.");
             IoManager.print("다시 입력해주세요.");

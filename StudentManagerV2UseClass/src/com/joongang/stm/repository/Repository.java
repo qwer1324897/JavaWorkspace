@@ -4,7 +4,11 @@ import com.joongang.stm.dto.StudentDto;
 
 /* 컴포넌트
  * 역할: 저장소 - 데이터 입출력 담당
+ * 
+ * 이 부분(레퍼지토리)은 사실상 DB 쿼리로 변경 예정. 지금은 아직 DB를 안 배워서 구현한 것. > 현업에서 직접 구현할 일 없음
+ * 복습할 때 이 부분은 그냥 복붙으로 진행.
  */
+
 public class Repository {
     private StudentDto[] list = new StudentDto[5];
     private int count = 0;
@@ -15,7 +19,7 @@ public class Repository {
     }
 
     public StudentDto[] findAll() {
-        // 복사
+        // 깊은 복사
         StudentDto[] newList = new StudentDto[count];
 
         /* 하단 내용은 필요한 만큼의 배열을 복사해서 리턴하는 내용 
@@ -65,7 +69,6 @@ public class Repository {
                 removeCount++;
             }
         }
-
         return removeCount;
     }
 

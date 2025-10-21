@@ -37,7 +37,7 @@ public class casino {
             if(command.equals("1")) {
                 // 홀짝게임 진행
 
-                System.out.println("\n\n\n\n\n\n\n-----홀짝 게임에 오신 것을 환영합니다-----");
+                System.out.println("\n\n\n-----홀짝 게임에 오신 것을 환영합니다-----");
                 System.out.print("\n베팅액 입력(남은 자본: "+coin+" 달러) > ");
                 int bet = Integer.parseInt(scanner.nextLine());
 
@@ -110,7 +110,7 @@ public class casino {
             } else if(command.equals("2")) {
                 // 가위바위보 게임
 
-                System.out.println("\n\n\n\n\n\n\n\n------------- 가위바위보 게임 -------------\n");
+                System.out.println("\n\n\n------------- 가위바위보 게임 -------------\n");
                 System.out.println("가위바위보 게임에 오신 것을 환영합니다.");
 
                 System.out.print("\n베팅 금액을 입력하세요 (보유 자본: "+coin+") > ");
@@ -138,60 +138,25 @@ public class casino {
                     System.out.println("------" + result + "------");
                     System.out.println("------------------------");
 
-
                     System.out.println(result);
 
                     if (Integer.parseInt(rockScissorsPaper) == result) {
                         System.out.println("축하합니다! 승리하셨습니다");
                     }
                     
-
-
-
-
                 } else if (rockScissorsPaper.equals("2")) {
-
                     if (Integer.parseInt(rockScissorsPaper) == result);
-
-
                 } else if (rockScissorsPaper.equals("3")) {
-
                     if (Integer.parseInt(rockScissorsPaper) == result);
-
-
-                } else {
-                    
+                } else { 
                     System.out.println("\n유효하지 않은 값 입니다.\n\n초기 화면으로 돌아갑니다.");
                     continue;
                 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             } else if(command.equals("3")) {
                 // 블랙잭
-
-
-
-
-
-
-
-
-
 
 
             } else if(command.equals("4")) {
@@ -231,11 +196,6 @@ public class casino {
                     System.out.println("\n남은 자본: "+coin+" 달러");
                     
                 }
-
-
-
-
-
             } else {
                 System.out.println("\n#유효하지 않은 값입니다. 다시 입력해주세요.#\n");
             }

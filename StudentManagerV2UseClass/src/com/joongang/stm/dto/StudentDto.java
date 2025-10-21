@@ -1,6 +1,6 @@
 package com.joongang.stm.dto;
 
-/* Dto = 기능 없음. 자료 형태 묶기만을 위한 클래스. 따라서 핵심은 속성이다. */
+/* Dto = 기능 없음. 자료 형태 묶기만을 위한 클래스. 따라서 핵심은 속성(필드)이다. */
 
 public class StudentDto {
     private String name;

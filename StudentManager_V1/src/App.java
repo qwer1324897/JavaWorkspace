@@ -184,10 +184,15 @@ public class App {
                 }
                 
 
-                
+
             } else if(command.equals("5")) {
                 // 학생 정보 수정 로직
-                System.out.println("[Test log] 학생 수정 로직 수행");
+                
+                System.out.print("\n수정할 학생의 이름을 입력하세요 > ");
+
+                String studentName = scanner.nextLine();
+
+                for(int = i ; )
 
 
 

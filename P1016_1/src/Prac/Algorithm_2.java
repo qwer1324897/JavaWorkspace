@@ -25,22 +25,27 @@ A B K
 
 public class Algorithm_2 {
     public static void main(String[] args) {
-        // A를 반복문으로 K씩 곱했을때, B 이상이면 탈출
 
         Scanner scanner = new Scanner(System.in);
-        int A = scanner.nextInt();
-        int B = scanner.nextInt();
-        int K = scanner.nextInt();
+        long A = scanner.nextLong();
+        long B = scanner.nextLong();
+        long K = scanner.nextLong();
 
-        int sum = A*K;
+        if (A == B) {
+            System.out.println("0");
+            return;
+        }
+
+        long sum = A*K;
 
         if (sum >= B) {
             System.out.println("1");
+            return;
         }
 
-        for (int i = 2 ; i < B ; i++) {
+        for (long i = 2 ; i < B ; i++) {
             
-            sum = sum*K + i - i;
+            sum = sum*K ;
     
             if (sum >= B) {
                 System.out.println(i);
