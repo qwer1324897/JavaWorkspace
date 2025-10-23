@@ -1,30 +1,21 @@
-
-import java.util.*;
-
-public class Solution {
-    public static void main(String[] args) {
-        So so = new So();
-
-        System.out.println(so.solution(15));
-        
-    }
-}
-
-
-class So {
-
-    public int solution(int n) {
-        int ans = 0;
-        while(n!=0){
-            if(n%2==0) {
-                n/=2; 
+class Solution {
+    public int solution(int left, int right) {
+        int answer = 0;
+        int count = 0;
+        int middle = left;
+        for(; middle <= right ; middle++) {
+            for(int i = 1 ; i <= middle ; i++) {
+                if(middle%i == 0) {
+                    count ++;
+                }   
             }
-            else{
-                n--; 
-                ans++;
-            }
+            if(count%2 == 1) {
+                middle = middle*-1 ;     
+            } 
+            answer += middle;
         }
-        return ans;
+        
+        
+        return answer;
     }
-    
 }
