@@ -1,4 +1,4 @@
-public class ProblemRequirements {
+public class TestRequirements {
     public static void main(String[] args) {
         /*
         날짜(문자): 2025-10-22

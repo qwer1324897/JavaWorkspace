@@ -13,7 +13,7 @@ public class IoManager {
     }
 
     public static String printAndInputString(String text) {    // 문자열 입력 메서드.
-        System.out.println(text);
+        System.out.print(text);
         String valueString = sc.nextLine();
         if (valueString.trim().isEmpty()) {    // 유효성 검사.
             System.out.print("\n이 입력란은 공란일 수 없습니다. 다시 입력해 주세요.\n > ");
@@ -22,13 +22,13 @@ public class IoManager {
         return valueString.trim();
     }
 
-    public static int printAndInputInteger(String text) {    // 정수 입력 메서드.
-        System.out.println(text);
+    public static Integer printAndInputInteger(String text) {    // 정수 입력 메서드.
+        System.out.print(text);
         while (!sc.hasNextInt()) {    // 유효성 검사.
             System.out.print("\n유효하지 않은 값입니다. 다시 입력해주세요.\n > ");
             sc.nextLine(); 
         }
-        int valueInteger = sc.nextInt();
+        Integer valueInteger = sc.nextInt();
         sc.nextLine();
         return valueInteger;
     }

@@ -10,7 +10,7 @@ public class Controller {
         ui.welcome();
         while (true) {
             ui.showMainMenu();
-            int userinput = ui.userInputCommand();
+            Integer userinput = ui.userInputCommand();
             if(ui.commandIsExit(userinput)) {
                 break;
             }

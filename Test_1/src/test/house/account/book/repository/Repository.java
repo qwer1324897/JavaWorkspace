@@ -2,14 +2,10 @@ package test.house.account.book.repository;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import test.house.account.book.dto.Dto;
 
 public class Repository {
 
-    /*
-     * 하단 내용은 배열도 모르고 ArrayList API도 잘 몰라서 그냥 gpt로 작성하였음.
-     */
     
     List<Dto>houseAccountList = new ArrayList<>();
 
@@ -20,8 +16,9 @@ public class Repository {
     public void save(Dto dto) {
         if (dto != null) {  
             houseAccountList.add(dto);  
-            System.out.println("성공적으로 저장되었습니다.\n===== 저장 내용 =====\n");
-            System.out.println("날짜: " + dto.getDate() + " 유형: " + dto.getKind() + " 거래 내용: " + dto.getCategory() +"\n금액: "+ dto.getPrice() + "원"+" 메모: "+dto.getMemo());  
+            System.out.println("\n\n*** "+ dto.getCategory() +" "+ dto.getKind() +"내역이 저장되었습니다. ***");
+            System.out.println("\n========== 저장 내용 ===========\n");
+            System.out.println("날짜: " + dto.getDate() + "\n유형: " + dto.getKind() + " / 거래항목: " + dto.getCategory() +"\n금액: "+ dto.getPrice() + "원"+"\n\n메모: "+dto.getMemo());  
         } else { 
             System.out.println("저장할 데이터가 없습니다.");
         }
