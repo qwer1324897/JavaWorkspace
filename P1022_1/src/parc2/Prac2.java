@@ -7,6 +7,6 @@ public class Prac2 {
         ArrayList<String> list = new ArrayList<>();
 
         list.add("null");
-
+        
     }
 }
