@@ -7,7 +7,7 @@ import test.house.account.book.dto.Dto;
 public class Repository {
 
     
-    List<Dto>houseAccountList = new ArrayList<>();
+    List<Dto> houseAccountList = new ArrayList<>();
 
     public Repository () {
         houseAccountList.add(new Dto("", "", "", 0, ""));

@@ -31,7 +31,7 @@ public class Service {
         if (IoManager.printAndInputInteger(" > ")==1) {
             IoManager.print("\n========== 수입 내역 목록 ==========\n");
             List<Dto>dto = new ArrayList<>();
-
+            
 
         } else {
             IoManager.print("");
