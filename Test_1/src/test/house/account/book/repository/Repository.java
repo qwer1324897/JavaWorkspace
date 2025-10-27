@@ -25,6 +25,19 @@ public class Repository {
     }
 
 }
+// public List<Dto> getAllTransactions() {
+//     return new ArrayList<>(houseAccountList);  // 얕은 복사 반환 (원본 보호)
+// }
+
+// public List<Dto> getIncomeTransactions() {  // 수입만 필터링
+//     List<Dto> incomeList = new ArrayList<>();
+//     for (Dto dto : houseAccountList) {
+//         if ("수입".equals(dto.getKind())) {
+//             incomeList.add(dto);
+//         }
+//     }
+//     return incomeList;
+// }
 
 /*
 날짜(문자): 2025-10-22

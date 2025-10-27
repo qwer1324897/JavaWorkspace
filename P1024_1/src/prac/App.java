@@ -62,5 +62,6 @@ public class App {
             System.out.println("No");
             break;
         }
+        sc.close();
     }
 }

@@ -1,5 +1,8 @@
 package test.house.account.book.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import test.house.account.book.IoManager.IoManager;
 import test.house.account.book.dto.Dto;
 import test.house.account.book.repository.Repository;
@@ -23,7 +26,16 @@ public class Service {
 
     public void transactionList() {
         IoManager.print("======== 수입/지출 내역 목록 및 합계 ========");
-        
+        IoManager.print("\n1. 수입 내역 목록 확인");
+        IoManager.print("2. 지출 내역 목록 및 합계");
+        if (IoManager.printAndInputInteger(" > ")==1) {
+            IoManager.print("\n========== 수입 내역 목록 ==========\n");
+            List<Dto>dto = new ArrayList<>();
+
+
+        } else {
+            IoManager.print("");
+        }
 
     }
 
