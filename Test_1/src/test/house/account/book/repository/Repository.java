@@ -6,7 +6,12 @@ import test.house.account.book.dto.Dto;
 
 public class Repository {
 
+<<<<<<< HEAD
     private List<Dto>houseAccountList = new ArrayList<>();
+=======
+    
+    List<Dto> houseAccountList = new ArrayList<>();
+>>>>>>> b521533f1cbe6c65ca7da065b9c9dc5ed6d8fbde
 
     public Repository () {}
 

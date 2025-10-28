@@ -192,7 +192,7 @@ public class App {
 
                 String studentName = scanner.nextLine();
 
-                for(int = i ; )
+                
 
 
 

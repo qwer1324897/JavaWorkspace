@@ -14,16 +14,7 @@ public class IoManager {
         System.out.print(text);
         return scanner.nextLine(); 
     }
-
-    public static void print(String text) {
-        System.out.println(text);
-    }
-
-    public static void pause() {
-        System.out.println("enter를 눌러 계속 진행합니다.");
-        scanner.nextLine();
-    }   // 이게 은행 프로그램에서 원하던 기능. 한 번 끝났을때 바로 메인메뉴 나오는게 아니라 enter로 한 번 쉬어가게 하는 기능.
-
+    
     public static int integerInput(String text) {
         System.out.print(text);
         while (!scanner.hasNextInt()) {
@@ -34,4 +25,15 @@ public class IoManager {
         scanner.nextLine();
         return number;
     }
+
+    public static void print(String text) {
+        System.out.println(text);
+    }
+
+    public static void pause() {
+        System.out.println("enter를 눌러 계속 진행합니다.");
+        scanner.nextLine();
+    }   // 이게 은행 프로그램에서 원하던 기능. 한 번 끝났을때 바로 메인메뉴 나오는게 아니라 enter로 한 번 쉬어가게 하는 기능.
+
+
 }
