@@ -18,11 +18,10 @@ public class UI {
     public void showMainMenu() {
         IoManager.print("\n============ Main ============\n");
         IoManager.print("1. 수입/지출 내역 등록");
-        IoManager.print("2. 수입/지출 내역 목록 및 합계");
+        IoManager.print("2. 거래 목록 및 거래항목별 합계");
         IoManager.print("3. 수입/지출 내역 삭제");
-        IoManager.print("4. 카테고리별 합계");
-        IoManager.print("5. 금액 내림차순 보기");
-        IoManager.print("6. 검색(메모 키워드)");
+        IoManager.print("4. 금액 내림차순 보기");
+        IoManager.print("5. 메모 키워드로 찾기");
         IoManager.print("\n0. 프로그램 종료");
     }
     
@@ -35,7 +34,7 @@ public class UI {
         if (userinput==1) {
             service.addTransaction();
         } else if (userinput==2) {
-            // service 매서드로 기능 구현
+            service.transactionList();
         } else if (userinput==3) {
             // service 매서드로 기능 구현
         } else if (userinput==4) {
@@ -58,3 +57,20 @@ public class UI {
         
     }
 }
+       /*
+        날짜(문자): 2025-10-22
+        유형(문자): 수입, 지출
+        카테고리(문자): 식비, 공과금, 교통비, 월급.. 등등
+        금액(숫자): 12000
+        메모(문자): 점심
+
+        * 화면 예시
+        [가계부]
+        1. 거래 등록 (수입/지출)
+        2. 거래 목록 및 카테고리별 합계 
+        3. 거래 삭제
+        4. 금액 내림차순 보기
+        5. 검색(메모 키워드)
+        0. 종료
+        선택>
+        */

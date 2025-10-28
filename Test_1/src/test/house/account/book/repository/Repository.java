@@ -6,23 +6,26 @@ import test.house.account.book.dto.Dto;
 
 public class Repository {
 
-    
-    List<Dto>houseAccountList = new ArrayList<>();
+    private List<Dto>houseAccountList = new ArrayList<>();
 
-    public Repository () {
-        houseAccountList.add(new Dto("", "", "", 0, ""));
-    }
+    public Repository () {}
 
-    public void save(Dto dto) {
-        if (dto != null) {  
-            houseAccountList.add(dto);  
-            System.out.println("\n\n*** "+ dto.getCategory() +" "+ dto.getKind() +"내역이 저장되었습니다. ***");
+    public void save(Dto saveDto) {
+        if (saveDto != null) {  
+            houseAccountList.add(saveDto);  
+            System.out.println("\n\n*** "+ saveDto.getCategory() +" "+ saveDto.getKind() +"내역이 저장되었습니다. ***");
             System.out.println("\n========== 저장 내용 ===========\n");
-            System.out.println("날짜: " + dto.getDate() + "\n유형: " + dto.getKind() + " / 거래항목: " + dto.getCategory() +"\n금액: "+ dto.getPrice() + "원"+"\n\n메모: "+dto.getMemo());  
+            System.out.println("날짜: " + saveDto.getDate() + "\n유형: " + saveDto.getKind() + " / 거래항목: " + saveDto.getCategory() +
+            "\n금액: "+ saveDto.getPrice() + "원"+"\n\n메모: "+saveDto.getMemo());  
         } else { 
             System.out.println("저장할 데이터가 없습니다.");
         }
     }
+
+    public List<Dto> copylist() {
+        return new ArrayList<>(houseAccountList);
+    }
+
 
 }
 // public List<Dto> getAllTransactions() {
