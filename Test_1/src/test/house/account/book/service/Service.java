@@ -32,7 +32,7 @@ public class Service {
         IoManager.print("3. 전체 내역 및 잔고 확인");
         IoManager.print("4. 카테고리 별 합계");
         if (IoManager.printAndInputInteger(" > ")==1) {
-<<<<<<< HEAD
+
             IoManager.print("\n============ 수입 내역 목록 ============\n");
             list = repository.copylist();
             int incomeCount = 0;
@@ -61,11 +61,9 @@ public class Service {
         } else if (IoManager.printAndInputInteger(" > ")==4){
             IoManager.print("\n========== 카테고리 별 합계 ==========\n");
 
-=======
             IoManager.print("\n========== 수입 내역 목록 ==========\n");
             List<Dto>dto = new ArrayList<>();
             
->>>>>>> b521533f1cbe6c65ca7da065b9c9dc5ed6d8fbde
 
         }
     }
