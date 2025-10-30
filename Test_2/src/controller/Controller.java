@@ -12,6 +12,7 @@ public class Controller {
 
         while(true) {
             ui.Menu();
+            
             if(ui.inputExit()) {
                 break;
             }

@@ -1,5 +1,9 @@
 package com.joongang.stm.repository;
 
+import java.io.BufferedOutputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import com.joongang.stm.dto.StudentDto;
@@ -41,4 +45,20 @@ public class Repository {
         }
         return count;
     }
+
+    public void saveAsFile() {
+        File file = new File("C:\\Temp\\stm_v3.dat");
+
+        try (FileOutputStream fos = new FileOutputStream(file);
+            BufferedOutputStream bos = new BufferedOutputStream(fos);
+            DataOutputStream dos = new DataOutputStream(bos);) 
+            {
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
 }
