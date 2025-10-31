@@ -50,6 +50,14 @@ public class ToDoDto {
         this.done = done;
     }
 
+    public String getDoneStatus() {
+        if (done) {
+            return "완료";
+        } else {
+            return "아직";
+        }
+    }
+
     public String getReview() {
         return review;
     }

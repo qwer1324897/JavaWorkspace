@@ -12,11 +12,11 @@ public class Controller {
 
         while(true) {
             ui.Menu();
-            
-            if(ui.inputExit()) {
+            Integer userInput = ui.UserInputCommand();
+            if(ui.inputExit(userInput)) {
                 break;
             }
-            ui.executeService();
+            ui.executeService(userInput);
         }
 
         ui.ProgramExit();

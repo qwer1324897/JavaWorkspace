@@ -13,8 +13,7 @@ public class Service {
 
     public void addToDo() {
         IoManager.print("\n============== 할 일을 추가합니다. ==============\n");
-        IoManager.pause();
-        String title = IoManager.printAndInputString("해야할 일의 제목을 입력해주세요.\n > ");
+        String title = IoManager.printAndInputString("\n해야할 일의 제목을 입력해주세요.\n > ");
         
         if (title.trim().isEmpty()) {
             IoManager.print("제목이 비었습니다. 추가가 취소됩니다.\n");
@@ -29,35 +28,58 @@ public class Service {
 
         LocalDate startDay = LocalDate.now();
         repository.saveTodo(title, startDay, null, false, null);
-        IoManager.print("할 일이 추가되었습니다: "+ title + "등록일: " + startDay);
+        IoManager.print("\n할 일이 추가되었습니다: '"+ title + "'\n등록일: " + startDay);
+        IoManager.pause();
     }
 
-    public void showAllToDoList() {
+    public void viewAllToDo() {
         Map<String, ToDoDto> allListMap = repository.allToDoList();
         if (allListMap.isEmpty()) {
             System.out.println("\n등록된 할 일이 없습니다.");
             return;
         }
-        IoManager.print("\n=============== 전체 목록 ===============\n");
+        IoManager.print("\n\n=============== 전체 목록 ===============");
         for (String key : allListMap.keySet()) {
-            
+            ToDoDto dtoKey = allListMap.get(key);
+            IoManager.print("\n할 일: " + key);
+            IoManager.print("\n  등록일: " + dtoKey.getStartDay());
+            IoManager.print("  완료일: " + dtoKey.getFinishDay());
+            IoManager.print("  완료여부: " + dtoKey.getDoneStatus());
+            IoManager.print("  후기: " + dtoKey.getReview());
         }
+        IoManager.pause();
     }
 
-    public void completeTodo() {
+    public void finishTodo() {
+        String title = IoManager.printAndInputString("완료 처리할 할 일의 제목을 입력하세요\n> ");
+        ToDoDto dto = repository.findByTitle(title.trim());
 
+        if (dto == null) {
+            IoManager.print("해당 제목의 할 일을 찾을 수 없습니다.");
+            return;
+        }
+        dto.setFinishDay(LocalDate.now());
+        dto.setdone(true);
+        String review = IoManager.printAndInputString("후기를 입력하세요. (없으면 공란으로 두세요.)\n> ");
+        if (review == null || review.isBlank()) {
+            dto.setReview(null);
+        } else {
+            dto.setReview(review.trim());
+        }
+        IoManager.print("\n완료 되었습니다.");
+        IoManager.pause();
     }
 
-    public void showListByNotDone() {
-
+    public void viewNotFinishedToDo() {
+    IoManager.print("\n\n=============== 미완료 목록 ===============");
     }
 
-    public void showListByDone() {
-
+    public void viewFinishedToDo() {
+    IoManager.print("\n\n=============== 완료 목록 ===============");
     }
 
-    public void searchByKeyword() {
-
+    public void searchToDoByKeyword() {
+    IoManager.print("\n\n=============== 키워드로 검색 ===============");
     }
 
     public void remove() {

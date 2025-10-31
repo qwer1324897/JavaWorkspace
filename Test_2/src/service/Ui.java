@@ -27,12 +27,16 @@ public class Ui {
         IoManager.print("6. 제목 키워드 검색");
         IoManager.print("7. 삭제");
         IoManager.print("\n0. 프로그램 종료");
-
     }
 
-    public boolean inputExit() {
-        String s = scanner.nextLine();
-        if (s.equals("0")) {
+    public Integer UserInputCommand() {
+        Integer userInput = IoManager.printAndInputInteger("\n원하시는 항목을 선택하세요. > ");
+        return userInput;  
+    }
+
+    public boolean inputExit(Integer userInput) {
+        Integer s = userInput;
+        if (s.equals(0)) {
             return true;
         }
         return false;
@@ -43,22 +47,20 @@ public class Ui {
         System.exit(0);
     }
 
-    public void executeService() {  
-        Integer command = IoManager.printAndInputInteger("\n원하시는 항목을 입력해 주세요.\n > ");
-
-        if(command.equals(1)) {
+    public void executeService(Integer userInput) {  
+        if(userInput.equals(1)) {
             service.addToDo();
-        } else if(command.equals(2)){
-            service.showAllToDoList();
-        } else if(command.equals(3)){
-            service.completeTodo();
-        } else if(command.equals(4)){
-            service.showListByNotDone();
-        } else if(command.equals(5)){
-            service.showListByDone();
-        } else if(command.equals(6)){
-            service.searchByKeyword();
-        } else if(command.equals(7)){
+        } else if(userInput.equals(2)){
+            service.viewAllToDo();
+        } else if(userInput.equals(3)){
+            service.finishTodo();
+        } else if(userInput.equals(4)){
+            service.viewNotFinishedToDo();
+        } else if(userInput.equals(5)){
+            service.viewFinishedToDo();
+        } else if(userInput.equals(6)){
+            service.searchToDoByKeyword();
+        } else if(userInput.equals(7)){
             service.remove();
         } else {
             IoManager.print("\n유효하지 않은 값 입니다.");
@@ -66,3 +68,13 @@ public class Ui {
         }        
     }
 }
+// ==== ToDo ====
+// 1. 할 일 추가
+// 2. 전체 목록 보기
+// 3. 완료 처리
+// 4. 미완료만 보기
+// 5. 완료만 보기
+// 6. 제목 키워드 검색
+// 7. 삭제
+// 0. 종료
+// 선택 >
